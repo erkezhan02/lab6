@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication and Division Calculator</title>
+</head>
+<body>
+    <h1>Multiplication and Division of Two Numbers</h1>
+    <p>Write 2 num:</p>
+    
+    <input type="number" id="num1" placeholder="First num">
+    <input type="number" id="num2" placeholder="Second num">
+    
+    <button onclick="calculate()">Calculate</button>
+    
+    <p id="multiplicationResult"></p>
+    <p id="divisionResult"></p>
+
+    <script>
+        function calculate() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+
+            // mult
+            var multiplication = num1 * num2;
+            document.getElementById('multiplicationResult').innerHTML = "Result mult: " + multiplication;
+
+            // division
+            if (num2 !== 0) {
+                var division = num1 / num2;
+                document.getElementById('divisionResult').innerHTML = "Result division: " + division;
+            } else {
+                document.getElementById('divisionResult').innerHTML = "0 is not divide!";
+            }
+        }
+    </script>
+</body>
+</html>
