@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Closest to 100</title>
+</head>
+<body>
+    <h1>Find Closest to 100</h1>
+    <p>Write 2 num:</p>
+    
+    <input type="number" id="num1" placeholder="First num">
+    <input type="number" id="num2" placeholder="Second num">
+    <button onclick="findClosest()">Find closest to 100</button>
+    
+    <p id="result"></p>
+
+    <script>
+        function near_100(a, b) {
+            const diffA = Math.abs(a - 100);
+            const diffB = Math.abs(b - 100);
+
+            if (diffA === diffB) {
+                return false;  
+            } else if (diffA < diffB) {
+                return a;       
+            } else {
+                return b;       
+            }
+        }
+
+        function findClosest() {
+            var num1 = parseInt(document.getElementById('num1').value);
+            var num2 = parseInt(document.getElementById('num2').value);
+            
+            var result = near_100(num1, num2);
+            document.getElementById('result').innerHTML = "Результат: " + result;
+        }
+    </script>
+</body>
+</html>
